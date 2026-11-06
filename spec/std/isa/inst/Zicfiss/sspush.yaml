@@ -54,6 +54,7 @@ encoding:
           30,
           31,
         ]
+memory_access: store
 access:
   s: always
   u: always

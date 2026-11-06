@@ -29,6 +29,11 @@ encoding:
       location: 19-15
     - name: xd
       location: 11-7
+operand_facts:
+  - name: xs2
+    source: false
+  - name: xs1
+    source: false
 access:
   s: always
   u: always

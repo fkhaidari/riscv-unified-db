@@ -24,6 +24,9 @@ encoding:
       location: 19-15
     - name: fd
       location: 11-7
+operand_facts:
+  - name: xs1
+    type: float_immediate
 access:
   s: always
   u: always

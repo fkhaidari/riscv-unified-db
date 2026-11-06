@@ -21,6 +21,7 @@ definedBy:
 assembly: x5
 encoding:
   match: "0110001010000001"
+memory_access: load
 access:
   s: always
   u: always

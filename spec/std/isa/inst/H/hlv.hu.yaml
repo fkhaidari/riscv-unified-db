@@ -21,6 +21,7 @@ encoding:
       location: 19-15
     - name: xd
       location: 11-7
+memory_access: load
 access:
   s: always
   u: always

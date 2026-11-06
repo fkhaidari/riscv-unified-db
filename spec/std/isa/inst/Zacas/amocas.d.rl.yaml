@@ -31,6 +31,16 @@ encoding:
       location: 19-15
     - name: xd
       location: 11-7
+operand_facts:
+  RV32:
+    - name: xd
+      type: register_pair
+      source: true
+    - name: xs2
+      type: register_pair
+  RV64:
+    - name: xd
+      source: true
 access:
   s: always
   u: always

@@ -33,6 +33,12 @@ encoding:
       location: 19-15
     - name: xd
       location: 11-7
+operand_facts:
+  - name: xd
+    type: register_pair
+    source: true
+  - name: xs2
+    type: register_pair
 access:
   s: always
   u: always

@@ -23,6 +23,7 @@ encoding:
       location: 24-20
     - name: xs1
       location: 19-15
+memory_access: store
 access:
   s: always
   u: always

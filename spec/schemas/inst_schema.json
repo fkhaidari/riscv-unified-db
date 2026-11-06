@@ -290,6 +290,32 @@
           "additionalProperties": false
         }
       ]
+    },
+    "operand_facts_def": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Operand name: an encoding variable, or an implicit register"
+          },
+          "type": {
+            "enum": ["register_pair", "float_immediate"],
+            "description": "register_pair: an even register and the next one. float_immediate: an index into a constant table, not a register"
+          },
+          "source": { "type": "boolean" },
+          "destination": { "type": "boolean" },
+          "register": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 31,
+            "description": "Number of the implicit X register"
+          }
+        },
+        "required": ["name"],
+        "additionalProperties": false
+      }
     }
   },
   "type": "object",
@@ -390,10 +416,35 @@
       "type": "string",
       "description": "Assembly format of the instruction. Can use decode variables"
     },
+    "operand_facts": {
+      "description": "Operand facts that the encoding and assembly do not give, e.g. a destination that is also read. Each entry names one operand and states only these facts",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/operand_facts_def"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "RV32": {
+              "$ref": "#/$defs/operand_facts_def"
+            },
+            "RV64": {
+              "$ref": "#/$defs/operand_facts_def"
+            }
+          },
+          "required": ["RV32", "RV64"],
+          "additionalProperties": false
+        }
+      ]
+    },
     "data_independent_timing": {
       "type": "boolean",
       "description": "Whether or not the instruction must execute with data-independent timing when the Zkt extension is supported",
       "default": false
+    },
+    "memory_access": {
+      "enum": ["load", "store"],
+      "description": "Data memory access performed by the instruction"
     },
     "pseudoinstructions": {
       "description": "Variations of this instruction that form a pseudoinstruction",

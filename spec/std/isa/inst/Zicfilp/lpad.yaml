@@ -19,6 +19,9 @@ encoding:
     - name: imm
       location: 31-12
       left_shift: 12
+operand_facts:
+  - name: t2
+    register: 7
 access:
   s: always
   u: always

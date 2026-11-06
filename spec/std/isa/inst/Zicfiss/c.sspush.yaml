@@ -20,6 +20,7 @@ definedBy:
 assembly: x1
 encoding:
   match: "0110000010000001"
+memory_access: store
 access:
   s: always
   u: always

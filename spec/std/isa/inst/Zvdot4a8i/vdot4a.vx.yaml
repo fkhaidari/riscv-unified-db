@@ -27,6 +27,9 @@ encoding:
       location: 19-15
     - name: vd
       location: 11-7
+operand_facts:
+  - name: vd
+    source: true
 access:
   s: always
   u: always
